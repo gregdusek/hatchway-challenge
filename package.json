@@ -1,0 +1,20 @@
+{
+  "name": "hatchway-challenge",
+  "version": "1.0.0",
+  "description": "hatchway-challenge",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gregdusek/hatchway-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gregdusek/hatchway-challenge/issues"
+  },
+  "homepage": "https://github.com/gregdusek/hatchway-challenge#readme"
+}
