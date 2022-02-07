@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/gregdusek/hatchway-challenge/issues"
   },
-  "homepage": "https://github.com/gregdusek/hatchway-challenge#readme"
+  "homepage": "https://github.com/gregdusek/hatchway-challenge#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
 }
