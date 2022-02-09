@@ -11,6 +11,7 @@ const morgan = require('morgan');
 const axios = require('axios');
 const apicache = require('apicache');
 const cache = apicache.middleware; //allows requests to be cached
+const {getApi, getTags} = require('./controller/controller.js');
 
 //===============================
 //             PORT
@@ -23,7 +24,7 @@ const PORT = process.env.PORT || 3001;
 //===============================
 
 //use public folder for static assests
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 //populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 
 app.use(express.urlencoded({ extended: false })); //extended false - does not allow nested objects in query strings
@@ -35,9 +36,8 @@ app.use(morgan('dev')); //logs every request to the console
 //===============================
 //            ROUTES
 //===============================
-app.get('/', (req, res) => {
-    res.send({success: true});
-});
+app.get('/api/ping', cache('Big Bang Theory'), getApi);
+app.get('/api/posts/:tags/:sortBy?/:direction?', cache('Big Bang Theory'), getTags);
 
 
 

@@ -27,7 +27,7 @@ const getTags = (req, res) => {
     if (tags.indexOf(',') !== - 1) {
         let tagArray = tags.split(',');
         let queryPaths = tagArray.map((tag, i) => {
-            return axios.get('hatchways.io/api/assessment/blog/posts?tags=${tag}&sortBy=${sortBy}&direction=${direction}')
+            return axios.get(`hatchways.io/api/assessment/blog/posts?tags=${tag}&sortBy=${sortBy}&direction=${direction}`)
         });
         axios.all([queryPaths])
 
@@ -77,7 +77,7 @@ const getTags = (req, res) => {
         });
     } else {
         //If only one tag is used, the query is executed
-        axios.get('hatchways.io/api/assessment/blog/posts?tags=${tags}&sortBy=${sortBy}&direction=${direction}')
+        axios.get(`hatchways.io/api/assessment/blog/posts?tags=${tags}&sortBy=${sortBy}&direction=${direction}`)
         .then(request => {
             let data = response.data.posts;
             if(sortBy) {
