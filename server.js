@@ -36,8 +36,8 @@ app.use(morgan('dev')); //logs every request to the console
 //===============================
 //            ROUTES
 //===============================
-app.get('/api/ping', cache('Big Bang Theory'), getApi);
-app.get('/api/posts/:tags/:sortBy?/:direction?', cache('Big Bang Theory'), getTags);
+app.get('/api/ping', cache('60 minutes'), getApi);
+app.get('/api/posts/:tags/:sortBy?/:direction?', cache('60 minutes'), getTags);
 
 
 
